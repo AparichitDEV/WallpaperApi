@@ -13,6 +13,14 @@ dbConnection.connect();
 const app = express();
 
 
+// test api
+
+app.get('/test', (req, res) => {
+   res.status(200).json({
+        name: 'sandeep! How dare you trying to access my personal projects..'
+   }); 
+});
+
 // categories
 app.get('/categories', (req, res) => {
     dbConnection.query('SELECT * from categories', (error, results, fields) => {
